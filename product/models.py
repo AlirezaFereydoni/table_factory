@@ -11,3 +11,10 @@ class Item(models.Model):
     description = models.TextField(max_length=300, default='', blank=True)
     
     
+class MDF(models.Model):
+    name = models.CharField(max_length=100)
+    size = models.CharField(max_length=50)
+    count = models.IntegerField()
+    
+
+    
