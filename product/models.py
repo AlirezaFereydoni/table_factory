@@ -18,3 +18,9 @@ class MDF(models.Model):
     
 
     
+class Section(models.Model): 
+    name = models.CharField(max_length=100, blank=True, default='')
+    items = models.ManyToManyField(Item,on_delete= models.CASCADE)
+    MDFs = models.ManyToManyField(MDF, on_delete= models.CASCADE)
+    image = models.ImageField(null=True)
+    
