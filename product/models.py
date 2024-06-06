@@ -24,3 +24,11 @@ class Section(models.Model):
     MDFs = models.ManyToManyField(MDF, on_delete= models.CASCADE)
     image = models.ImageField(null=True)
     
+
+class Product(models.Model): 
+    name = models.CharField(max_length=100, null=False, blank=False)
+    description = models.TextField(max_length=300, null=True, blank=True)
+    vision = models.ImageField()
+    series = models.ManyToManyField(Section, on_delete=models.CASCADE)
+    
+    
